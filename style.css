@@ -6,14 +6,66 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: #d0f0e8;
+    position: relative;
+    min-height: 100vh;
 }
 
+/* ===== ДОСТОПРИМЕЧАТЕЛЬНОСТИ ЧЕЛЯБИНСКА ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    
+    /* Верблюд (символ Челябинска) */
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="75" fill="%23184538" opacity="0.25">🐫</text></svg>'),
+        /* Пешеход */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="85" fill="%23276151" opacity="0.25">🚶</text></svg>'),
+        /* Танк/памятник */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="90" fill="%23184538" opacity="0.22">🏛️</text></svg>'),
+        /* Завод */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="95" fill="%23276151" opacity="0.23">🏭</text></svg>'),
+        /* Река Миасс */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="80" fill="%23184538" opacity="0.24">🌊</text></svg>'),
+        /* Арка */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="70" fill="%23276151" opacity="0.26">🏛️</text></svg>'),
+        /* Дерево (парк) */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="88" fill="%23184538" opacity="0.22">🌳</text></svg>');
+    
+    background-repeat: no-repeat;
+    background-position: 
+        5% 10%,
+        90% 15%,
+        12% 50%,
+        88% 80%,
+        8% 85%,
+        75% 40%,
+        45% 60%;
+    
+    background-size: 
+        140px 140px,
+        150px 150px,
+        160px 160px,
+        170px 170px,
+        145px 145px,
+        135px 135px,
+        155px 155px;
+}
+
+/* ===== ВСЁ ОСТАЛЬНОЕ (ОСТАВЛЯЕМ КАК ЕСТЬ) ===== */
 h1 {
     color: #1a5e4b;
     text-align: center;
     font-size: 42px;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
 }
 
 .subtitle {
@@ -31,6 +83,8 @@ h1 {
     margin-right: auto;
     width: fit-content;
     backdrop-filter: blur(2px);
+    position: relative;
+    z-index: 1;
 }
 
 .controls {
@@ -40,6 +94,9 @@ h1 {
     margin-bottom: 20px;
     box-shadow: 0 8px 16px rgba(0, 80, 60, 0.2);
     border: 2px solid #b0e0d5;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(3px);
 }
 
 button {
@@ -72,6 +129,8 @@ button:hover {
 .container {
     display: flex;
     gap: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .map {
@@ -179,4 +238,6 @@ h2 {
     backdrop-filter: blur(2px);
     border-radius: 30px;
     padding: 10px;
+    position: relative;
+    z-index: 1;
 }
