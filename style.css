@@ -1,70 +1,12 @@
-/* ===============================
-   Nastya's EcoCity
-   Фон: призрачные достопримечательности Челябинска
-   (НОВАЯ ВЕРСИЯ — каждый символ отдельно)
-   =============================== */
+@charset "UTF-8";
 
-/* ---- Основные стили (как и были) ---- */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #c8e8e0; /* Немного насыщеннее мятный */
-    position: relative; /* Это нужно для позиционирования псевдоэлемента */
-    min-height: 100vh;
+    background-color: #d0f0e8;
 }
-
-/* ---- ВОТ ГЛАВНОЕ ИЗМЕНЕНИЕ: Слой с достопримечательностями ---- */
-body::before {
-    content: '';
-    position: fixed; /* fixed, чтобы они не двигались при прокрутке */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none; /* Чтобы сквозь них можно было нажимать кнопки */
-    z-index: 0; /* Подложка под весь контент */
-    
-    /* Верблюд (символ Челябинска) - вверху слева */
-    background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="75" fill="%23184538" opacity="0.25">🐫</text></svg>'),
-        /* Пешеход (Кировка) - справа вверху */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="85" fill="%23276151" opacity="0.25">🚶</text></svg>'),
-        /* Танк (памятник) - слева по центру */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="90" fill="%23184538" opacity="0.22">🏛️</text></svg>'),
-        /* Завод - справа внизу */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="95" fill="%23276151" opacity="0.23">🏭</text></svg>'),
-        /* Река Миасс - внизу слева */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="80" fill="%23184538" opacity="0.24">🌊</text></svg>'),
-        /* Арка (Кировка) - по центру справа */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="70" fill="%23276151" opacity="0.26">🏛️</text></svg>'),
-        /* Дерево (парк Гагарина) - в центре */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="80" font-size="88" fill="%23184538" opacity="0.22">🌳</text></svg>');
-    
-    /* Разбрасываем их по разным углам, чтобы не накладывались */
-    background-repeat: no-repeat; /* Чтобы каждый был только в одном месте */
-    background-position: 
-        5% 10%,    /* верблюд - слева вверху */
-        90% 15%,   /* пешеход - справа вверху */
-        12% 50%,   /* танк - слева по центру */
-        88% 80%,   /* завод - справа внизу */
-        8% 85%,    /* река - слева внизу */
-        75% 40%,   /* арка - справа по центру */
-        45% 60%;   /* дерево - в центре */
-    
-    background-size: 
-        140px 140px,
-        150px 150px,
-        160px 160px,
-        170px 170px,
-        145px 145px,
-        135px 135px,
-        155px 155px;
-}
-
-/* ---- Всё остальное (кнопки, карточки) почти без изменений, 
-       но я добавлю фон побольше для читаемости ---- */
 
 h1 {
     color: #1a5e4b;
@@ -72,8 +14,6 @@ h1 {
     font-size: 42px;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     margin-bottom: 5px;
-    position: relative; /* Чтобы был над фоном */
-    z-index: 1;
 }
 
 .subtitle {
@@ -91,8 +31,6 @@ h1 {
     margin-right: auto;
     width: fit-content;
     backdrop-filter: blur(2px);
-    position: relative;
-    z-index: 1;
 }
 
 .controls {
@@ -102,9 +40,6 @@ h1 {
     margin-bottom: 20px;
     box-shadow: 0 8px 16px rgba(0, 80, 60, 0.2);
     border: 2px solid #b0e0d5;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(3px);
 }
 
 button {
@@ -137,8 +72,6 @@ button:hover {
 .container {
     display: flex;
     gap: 20px;
-    position: relative;
-    z-index: 1;
 }
 
 .map {
@@ -246,6 +179,4 @@ h2 {
     backdrop-filter: blur(2px);
     border-radius: 30px;
     padding: 10px;
-    position: relative;
-    z-index: 1;
 }
