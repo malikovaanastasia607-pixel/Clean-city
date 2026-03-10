@@ -10,30 +10,36 @@ body {
     padding: 20px;
     background-color: #d0f0e8;  /* Мятный базовый цвет */
     
-    /* Призрачные символы Челябинска */
+    /* Призрачные символы Челябинска - теперь ПОБОЛЬШЕ и ПОЧЕТЧЕ */
     background-image: 
         /* Верблюд (символ Челябинска) */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="40" fill="%231a5e4b" opacity="0.08">🐫</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="60" fill="%231a5e4b" opacity="0.12">🐫</text></svg>'),
         /* Пешеход (Кировка) */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="35" fill="%232d7a66" opacity="0.07">🚶</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="55" fill="%232d7a66" opacity="0.11">🚶</text></svg>'),
         /* Танк (памятник) */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="40" fill="%231a5e4b" opacity="0.06">🏛️</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="58" fill="%231a5e4b" opacity="0.1">🏛️</text></svg>'),
         /* Завод */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="38" fill="%232d7a66" opacity="0.07">🏭</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="62" fill="%232d7a66" opacity="0.11">🏭</text></svg>'),
         /* Река Миасс */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="42" fill="%231a5e4b" opacity="0.06">🌊</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="65" fill="%231a5e4b" opacity="0.1">🌊</text></svg>'),
         /* Арка */
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="36" fill="%232d7a66" opacity="0.07">🏛️</text></svg>');
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="56" fill="%232d7a66" opacity="0.11">🏛️</text></svg>'),
+        /* Добавила еще пару символов для разнообразия */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="54" fill="%231a5e4b" opacity="0.1">🏗️</text></svg>'),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="0" y="20" font-size="59" fill="%232d7a66" opacity="0.1">🌳</text></svg>');
     
     background-repeat: repeat;
-    background-size: 80px 80px, 70px 70px, 90px 90px, 60px 60px, 85px 85px, 75px 75px;
+    background-size: 130px 130px, 120px 120px, 125px 125px, 140px 140px, 135px 135px, 110px 110px, 115px 115px, 120px 120px;
     background-position: 
-        10px 20px,
-        150px 300px,
-        400px 120px,
-        600px 550px,
-        250px 700px,
-        750px 400px;
+        30px 50px,      /* верблюд */
+        250px 180px,    /* пешеход */
+        550px 320px,    /* танк */
+        100px 600px,    /* завод */
+        700px 150px,    /* река */
+        450px 550px,    /* арка */
+        800px 450px,    /* стройка */
+        180px 750px;    /* дерево */
+    
     background-attachment: fixed;
 }
 
@@ -54,7 +60,7 @@ h1 {
     margin-top: 0;
     margin-bottom: 30px;
     font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 5px 15px;
     border-radius: 40px;
     display: inline-block;
@@ -206,7 +212,7 @@ h2 {
     font-size: 14px;
     border-top: 2px dashed #b0e0d5;
     padding-top: 15px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(2px);
     border-radius: 30px;
     padding: 10px;
