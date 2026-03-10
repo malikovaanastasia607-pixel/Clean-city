@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CleanCity - Умный мониторинг баков</title>
+    <title>Nastya's EcoCity - Чистый город</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>♻️ CleanCity</h1>
-    <p>Мониторинг заполненности мусорных контейнеров в реальном времени</p>
+    <h1>🌸 Nastya's EcoCity</h1>
+    <div class="subtitle">Мониторинг мусорных баков • Проект Анастасии</div>
     
     <div class="controls">
         <button id="connectBtn">🔌 Подключиться к Arduino</button>
@@ -18,17 +18,17 @@
     
     <div class="container">
         <div class="map">
-            <h2>Карта контейнеров</h2>
+            <h2>🗺️ Карта контейнеров</h2>
             <div class="bins">
                 <div class="bin" id="bin1">
                     <div class="bin-icon">🗑️</div>
-                    <div class="bin-name">Бак №1 (Лего-модель)</div>
+                    <div class="bin-name">Бак №1 (Мой Лего-бак)</div>
                     <div class="bin-level" id="level1">Уровень: --%</div>
                     <div class="bin-indicator" id="indicator1">⚪</div>
                 </div>
                 <div class="bin" id="bin2">
-                    <div class="bin-icon">🗑️</div>
-                    <div class="bin-name">Бак №2 (Школа)</div>
+                    <div class="bin-icon">🏫</div>
+                    <div class="bin-name">Бак №2 (Школьный двор)</div>
                     <div class="bin-level" id="level2">Уровень: --%</div>
                     <div class="bin-indicator" id="indicator2">⚪</div>
                 </div>
@@ -36,11 +36,15 @@
         </div>
         
         <div class="stats">
-            <h2>Статистика</h2>
-            <p>Последние данные:</p>
+            <h2>📊 Статистика</h2>
+            <p>Последние данные с датчика:</p>
             <div id="lastUpdate">--:--:--</div>
             <div id="rawData">Ожидание данных...</div>
         </div>
+    </div>
+    
+    <div class="footer">
+        Сделано с ❤️ и Arduino • Анастасия, 10 класс • Челябинск
     </div>
     
     <script src="script.js"></script>
