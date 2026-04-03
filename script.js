@@ -10,11 +10,13 @@ const bin1Div = document.getElementById('bin1');
 const rawDataDiv = document.getElementById('rawData');
 const lastUpdateSpan = document.getElementById('lastUpdate');
 
+// Проверка поддержки Web Serial API
 if (!navigator.serial) {
     statusSpan.textContent = '❌ Web Serial API не поддерживается. Используй Chrome/Edge.';
     connectBtn.disabled = true;
 }
 
+// Подключение к Arduino
 connectBtn.addEventListener('click', async () => {
     try {
         port = await navigator.serial.requestPort();
@@ -34,6 +36,7 @@ connectBtn.addEventListener('click', async () => {
     }
 });
 
+// Чтение данных из Serial порта
 async function readLoop() {
     const decoder = new TextDecoder();
     let buffer = '';
@@ -61,6 +64,7 @@ async function readLoop() {
     }
 }
 
+// Обработка полученных данных
 function processData(data) {
     if (!data) return;
     
@@ -78,10 +82,12 @@ function processData(data) {
     lastUpdateSpan.textContent = now.toLocaleTimeString();
 }
 
+// Обновление интерфейса (цвета и проценты)
 function updateUI(level) {
     level1Span.textContent = `Уровень: ${level}%`;
     
-    if (level < 30) {
+    // ПОРОГИ: зелёный 0-39%, жёлтый 40-69%, красный 70-100%
+    if (level < 40) {
         indicator1Span.textContent = '🟢';
         bin1Div.className = 'bin green';
     } else if (level < 70) {
